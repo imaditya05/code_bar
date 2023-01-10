@@ -1,18 +1,26 @@
 const User = require("../models/user");
 
+
 module.exports.profile = function (req, res) {
     return res.render('user', {
         title: "User"
     });
 }
-
+//render the signup page
 module.exports.signUp = function (req, res) {
+    if (req.isAuthenticated()){
+        return res.redirect('/users/profile');
+    }
     return res.render('user_sign_up', {
         title: "Codebar | Sign Up "
     })
 }
 
 module.exports.signIn = function (req, res) {
+    //need to find out why this is throwing error of redirect too many times
+    if (req.isAuthenticated()){
+        return res.redirect('/users/profile');
+    }
     return res.render('user_sign_in', {
         title: "Codebar | Sign In"
     })
@@ -38,5 +46,14 @@ module.exports.create = function (req, res) {
 }
 //sign in and create a session for the user
 module.exports.createSession = function (req, res) {
-    //to do later
+    return res.redirect('/');
+}
+
+//Sign Out for the user
+
+module.exports.destroySession = function(req, res){
+    req.logout(function(err){
+        if(err){return next(err);}
+    });
+    return res.redirect('/');
 }
