@@ -1,10 +1,15 @@
+* {
+  font-family: sans-serif;
+}
+
 body {
   margin: 0;
   /* text-align: center; */
 }
 
 #layout-main {
-  height: 100%;
+  display: flex;
+  background-color: azure;
 }
 
 /*# sourceMappingURL=layout.css.map */

@@ -1,18 +1,22 @@
-#layout-footer{
+* {
+  font-family: sans-serif;
+}
+
+#layout-footer {
+  color: white;
+  a {
     color: white;
-    a{
-        color: white;
-        text-decoration: none;
-    }
+    text-decoration: none;
+  }
 
-    background: grey;
-    padding: 5px 10px;
-    display: flex;
-    justify-content: flex-start;
+  background: grey;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: flex-start;
 
-    .footer-nav{
-        ul{
-            list-style: none;
-        }
+  .footer-nav {
+    ul {
+      list-style: none;
     }
+  }
 }
