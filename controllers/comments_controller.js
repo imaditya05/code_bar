@@ -33,7 +33,7 @@ module.exports.destroy = async function (req, res) {
       });
       return res.redirect("back");
     } else {
-      return res.redirect("back");
+      return res.redirect("back hello");
     }
   } catch (err) {
     console.log("Error", err);
